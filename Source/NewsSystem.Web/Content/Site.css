@@ -1,0 +1,108 @@
+﻿/* Custom normalization */
+form {
+    margin-bottom: 0;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+}
+
+/* Set widths on the form inputs since otherwise they're 100% wide */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+input[type="select"] {
+    max-width: 280px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+    .jumbotron {
+        margin-top: 20px;
+    }
+
+    .body-content {
+        padding: 0;
+    }
+}
+
+table, th, td, tr, thead, tbody {
+    border: 0;
+}
+
+/* Envisioned Theme */
+body {
+    background-color: black;
+    background-image: url("images/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1 {
+    color: white;
+    font-family: "blackjack";
+    font-size: 36px;
+    margin-top: 65px;
+    text-shadow: 0px 0px 5px black;
+}
+
+nav.nav-header > ul {
+    background-color: #343434;
+    border-radius: 10px;
+    padding: 20px 25px 18px 25px;
+}
+
+nav > ul > li {
+    display: inline-block;
+    font-size: 12px;
+    margin: 0px;
+    padding: 0px;
+    padding-right: 20px;
+    text-shadow: 1px 0px 0px #11161c;
+}
+
+    nav > ul > li > a {
+        color: white;
+        text-decoration: none;
+    }
+
+.main-content {
+    background-image: url("images/pattern.jpg");
+}
+
+.pre-footer {
+    background-image: url("images/pre-footer-bg.jpg");
+    padding-top: 70px;
+    padding-bottom: 50px;
+}
+
+    .pre-footer .pre-footer-heading {
+        font-size: 24px;
+        font-family: "colaborate";
+        text-shadow: 1px 0px 0px white;
+    }
+
+    .pre-footer p {
+        color: #8b949d;
+        font-size: 12px;
+        font-family: "droidsans";
+        text-shadow: 1px 0px 0px white;
+    }
+
+    .pre-footer .btn {
+        color: #1c2329;
+        font-size: 11px;
+        text-decoration: none;
+        background-color: white;
+        border-radius: 10px;
+        float: right;
+        padding: 6px 12px;
+        text-shadow: 1px 0px 0px white;
+    }
+
+footer {
+    background-image: url("images/footer-bg.png");
+    padding: 25px 0;
+}
