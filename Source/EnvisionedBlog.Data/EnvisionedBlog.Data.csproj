@@ -58,6 +58,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IEnvisionedBlogDbContext.cs" />
+    <Compile Include="Migrations\201602032015517_Initial.cs" />
+    <Compile Include="Migrations\201602032015517_Initial.Designer.cs">
+      <DependentUpon>201602032015517_Initial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Migrations\SeedData.cs" />
     <Compile Include="EnvisionedBlogDbContext.cs" />
@@ -75,7 +79,11 @@
       <Name>EnvisionedBlog.Data.Models</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201602032015517_Initial.resx">
+      <DependentUpon>201602032015517_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
