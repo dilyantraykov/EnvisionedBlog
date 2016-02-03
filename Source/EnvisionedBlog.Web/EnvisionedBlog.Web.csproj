@@ -186,6 +186,7 @@
     <Content Include="Content\images\pattern.jpg" />
     <Content Include="Content\normalize.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\Site.less" />
     <Content Include="Content\Site.min.css">
       <DependentUpon>Site.css</DependentUpon>
     </Content>
