@@ -180,11 +180,15 @@
     <Content Include="Account\Register.aspx" />
     <Content Include="Content\images\bg.jpg" />
     <Content Include="Content\images\favicon.png" />
+    <Content Include="Content\images\post_shadow.png" />
     <Content Include="Content\images\pre-footer-bg.jpg" />
     <Content Include="Content\images\footer-bg.png" />
     <Content Include="Content\images\pattern.jpg" />
     <Content Include="Content\normalize.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\Site.min.css">
+      <DependentUpon>Site.css</DependentUpon>
+    </Content>
     <Content Include="Content\skeleton.css" />
     <Content Include="Controls\LikeHateControl.ascx" />
     <Content Include="fonts\BlackJack\blackjar-demo.html" />
@@ -205,6 +209,11 @@
     <Content Include="fonts\DroidSans\DroidSans-webfont.eot" />
     <Content Include="fonts\DroidSans\DroidSans-webfont.ttf" />
     <Content Include="fonts\DroidSans\DroidSans-webfont.woff" />
+    <None Include="Content\Site.less" />
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Home.aspx" />
     <Content Include="Private\ViewArticles.aspx" />
@@ -385,7 +394,9 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\BuildWebCompiler.1.10.301\build\BuildWebCompiler.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\BuildWebCompiler.1.10.301\build\BuildWebCompiler.targets'))" />
   </Target>
+  <Import Project="..\packages\BuildWebCompiler.1.10.301\build\BuildWebCompiler.targets" Condition="Exists('..\packages\BuildWebCompiler.1.10.301\build\BuildWebCompiler.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
