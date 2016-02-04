@@ -13,13 +13,13 @@ namespace EnvisionedBlog.Web {
     public partial class Home {
         
         /// <summary>
-        /// repeaterArticle control.
+        /// repeaterPost control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater repeaterArticle;
+        protected global::System.Web.UI.WebControls.Repeater repeaterPost;
         
         /// <summary>
         /// lvCategories control.

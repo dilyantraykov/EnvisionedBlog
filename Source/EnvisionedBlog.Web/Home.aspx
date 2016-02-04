@@ -2,13 +2,13 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h1>News</h1>
-    <h2>Most Popular Articles</h2>
-    <asp:Repeater runat="server" ID="repeaterArticle"
-        ItemType="EnvisionedBlog.Data.Models.Article"
-        SelectMethod="repeaterArticle_GetData1">
+    <h2>Most Popular Posts</h2>
+    <asp:Repeater runat="server" ID="repeaterPost"
+        ItemType="EnvisionedBlog.Data.Models.Post"
+        SelectMethod="repeaterPost_GetData1">
         <ItemTemplate>
             <h3>
-                <a href="ViewArticle.aspx?id=<%# Item.Id %>"><%#: Item.Title %></a>
+                <a href="ViewPost.aspx?id=<%# Item.Id %>"><%#: Item.Title %></a>
                 <small><%#: Item.Category.Name %></small>
             </h3>
             <p>
@@ -16,6 +16,9 @@
             </p>
             <p>
                 Likes: <%# Item.Likes.Count() %>
+            </p>
+            <p>
+                Comments: <%# Item.Comments.Count() %>
             </p>
             <i>by <%#: Item.Author.UserName %> created on: <%# Item.DateCreated %>
             </i>
@@ -32,18 +35,18 @@
         <ItemTemplate>
             <div class="col-md-6">
                 <h3><%#: Item.Name %></h3>
-                <asp:ListView runat="server" ItemType="EnvisionedBlog.Data.Models.Article" DataSource="<%# Item.Articles.OrderByDescending(x => x.DateCreated).Take(3) %>">
+                <asp:ListView runat="server" ItemType="EnvisionedBlog.Data.Models.Post" DataSource="<%# Item.Posts.OrderByDescending(x => x.DateCreated).Take(3) %>">
                     <LayoutTemplate>
                         <ul runat="server" id="itemPlaceholder">
                         </ul>
                     </LayoutTemplate>
                     <ItemTemplate>
                         <li>
-                            <a href="ViewArticle.aspx?id=<%# Item.Id %>"><strong><%#: Item.Title %></strong> <i>by <%#: Item.Author.UserName %></i></a>
+                            <a href="ViewPost.aspx?id=<%# Item.Id %>"><strong><%#: Item.Title %></strong> <i>by <%#: Item.Author.UserName %></i></a>
                         </li>
                     </ItemTemplate>
                     <EmptyDataTemplate>
-                        No articles.
+                        No posts.
                     </EmptyDataTemplate>
                 </asp:ListView>
             </div>

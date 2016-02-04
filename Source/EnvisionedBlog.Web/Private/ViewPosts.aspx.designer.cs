@@ -10,15 +10,15 @@
 namespace EnvisionedBlog.Web.Private {
     
     
-    public partial class ViewArticles {
+    public partial class ViewPosts {
         
         /// <summary>
-        /// lvArticles control.
+        /// lvPosts control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView lvArticles;
+        protected global::System.Web.UI.WebControls.ListView lvPosts;
     }
 }

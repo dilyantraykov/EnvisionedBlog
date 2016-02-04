@@ -20,8 +20,8 @@
         protected void Page_Load(object sender, EventArgs e)
         {
             var userId = Page.User.Identity.GetUserId();
-            var articledId = int.Parse(this.Request.QueryString["id"]);
-            var like = this.LikesServices.GetByAuthorIdAndArticledId(userId, articledId);
+            var postdId = int.Parse(this.Request.QueryString["id"]);
+            var like = this.LikesServices.GetByAuthorIdAndPostdId(userId, postdId);
 
             if(like == null)
             {
@@ -44,12 +44,12 @@
         private void HandleLikeEvent(bool isLike)
         {
             var userId = Page.User.Identity.GetUserId();
-            var articledId = int.Parse(this.Request.QueryString["id"]);
-            var like = this.LikesServices.GetByAuthorIdAndArticledId(userId, articledId);
+            var postdId = int.Parse(this.Request.QueryString["id"]);
+            var like = this.LikesServices.GetByAuthorIdAndPostdId(userId, postdId);
 
             if (like != null)
             {
-                this.LikesServices.ChangeLike(userId, articledId);
+                this.LikesServices.ChangeLike(userId, postdId);
                 (like.Value ? this.btnLike : this.btnHate).Visible = false;
                 (!like.Value ? this.btnLike : this.btnHate).Visible = true;
             }
@@ -58,7 +58,7 @@
                 var createdLike = new Like()
                 {
                     AuthorId = Page.User.Identity.GetUserId(),
-                    ArticleId = int.Parse(this.Request.QueryString["id"]),
+                    PostId = int.Parse(this.Request.QueryString["id"]),
                     Value = isLike
                 };
                 this.LikesServices.CreateLike(createdLike);

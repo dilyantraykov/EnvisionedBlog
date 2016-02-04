@@ -15,9 +15,9 @@
             this.likes = likes;
         }
 
-        public void ChangeLike(string userId, int articleId)
+        public void ChangeLike(string userId, int postId)
         {
-            var like = this.GetByAuthorIdAndArticledId(userId, articleId);
+            var like = this.GetByAuthorIdAndPostdId(userId, postId);
 
             like.Value = !like.Value;
 
@@ -30,9 +30,9 @@
             this.likes.SaveChanges();
         }
 
-        public Like GetByAuthorIdAndArticledId(string userId, int articleId)
+        public Like GetByAuthorIdAndPostdId(string userId, int postId)
         {
-            return this.likes.All().FirstOrDefault(x => x.AuthorId == userId && x.ArticleId == articleId);
+            return this.likes.All().FirstOrDefault(x => x.AuthorId == userId && x.PostId == postId);
         }
     }
 }

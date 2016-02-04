@@ -217,7 +217,7 @@
     </None>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Home.aspx" />
-    <Content Include="Private\ViewArticles.aspx" />
+    <Content Include="Private\ViewPosts.aspx" />
     <Content Include="Private\ViewCategories.aspx" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -249,7 +249,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
-    <Content Include="ViewArticle.aspx" />
+    <Content Include="PostDetails.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -309,12 +309,12 @@
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\IdentityModels.cs" />
-    <Compile Include="Private\ViewArticles.aspx.cs">
-      <DependentUpon>ViewArticles.aspx</DependentUpon>
+    <Compile Include="Private\ViewPosts.aspx.cs">
+      <DependentUpon>ViewPosts.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Private\ViewArticles.aspx.designer.cs">
-      <DependentUpon>ViewArticles.aspx</DependentUpon>
+    <Compile Include="Private\ViewPosts.aspx.designer.cs">
+      <DependentUpon>ViewPosts.aspx</DependentUpon>
     </Compile>
     <Compile Include="Private\ViewCategories.aspx.cs">
       <DependentUpon>ViewCategories.aspx</DependentUpon>
@@ -332,12 +332,12 @@
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
-    <Compile Include="ViewArticle.aspx.cs">
-      <DependentUpon>ViewArticle.aspx</DependentUpon>
+    <Compile Include="PostDetails.aspx.cs">
+      <DependentUpon>PostDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ViewArticle.aspx.designer.cs">
-      <DependentUpon>ViewArticle.aspx</DependentUpon>
+    <Compile Include="PostDetails.aspx.designer.cs">
+      <DependentUpon>PostDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>

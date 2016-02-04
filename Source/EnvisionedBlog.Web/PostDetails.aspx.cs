@@ -6,10 +6,10 @@
     using System;
     using System.Web.ModelBinding;
 
-    public partial class ViewArticle : System.Web.UI.Page
+    public partial class ViewPost : System.Web.UI.Page
     {
         [Inject]
-        public IArticlesServices ArticlesServices { get; set; }
+        public IPostsServices PostsServices { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -18,11 +18,11 @@
 
         // The id parameter should match the DataKeyNames value set on the control
         // or be decorated with a value provider attribute, e.g. [QueryString]int id
-        public Article fvDetails_GetItem([QueryString]string id)
+        public Post fvDetails_GetItem([QueryString]string id)
         {
             // TODO: validate id
 
-            return this.ArticlesServices.GetById(int.Parse(id));
+            return this.PostsServices.GetById(int.Parse(id));
         }
     }
 }

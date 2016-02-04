@@ -6,11 +6,11 @@
 
     public class Category
     {
-        private ICollection<Article> articles;
+        private ICollection<Post> posts;
 
         public Category()
         {
-            this.articles = new HashSet<Article>();
+            this.posts = new HashSet<Post>();
         }
 
         public int Id { get; set; }
@@ -20,6 +20,6 @@
         [MaxLength(100)]
         public string Name { get; set; }
 
-        public virtual ICollection<Article> Articles { get { return this.articles; } set { this.articles = value; } }
+        public virtual ICollection<Post> Posts { get { return this.posts; } set { this.posts = value; } }
     }
 }

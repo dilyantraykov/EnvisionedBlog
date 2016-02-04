@@ -3,7 +3,7 @@ namespace EnvisionedBlog.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Initial : DbMigration
+    public partial class CommentsAdded : DbMigration
     {
         public override void Up()
         {

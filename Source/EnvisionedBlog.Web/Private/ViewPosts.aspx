@@ -1,13 +1,13 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ViewArticles.aspx.cs" Inherits="EnvisionedBlog.Web.Private.ViewArticles" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ViewPosts.aspx.cs" Inherits="EnvisionedBlog.Web.Private.ViewPosts" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <asp:ListView runat="server" ID="lvArticles"
-        ItemType="EnvisionedBlog.Data.Models.Article"
+    <asp:ListView runat="server" ID="lvPosts"
+        ItemType="EnvisionedBlog.Data.Models.Post"
         DataKeyNames="Id"
-        SelectMethod="lvArticles_GetData"
-        UpdateMethod="lvArticles_UpdateItem"
-        DeleteMethod="lvArticles_DeleteItem"
-        InsertMethod="lvArticles_InsertItem"
+        SelectMethod="lvPosts_GetData"
+        UpdateMethod="lvPosts_UpdateItem"
+        DeleteMethod="lvPosts_DeleteItem"
+        InsertMethod="lvPosts_InsertItem"
         InsertItemPosition="None">
         <LayoutTemplate>
             <asp:HyperLink NavigateUrl="?orderBy=Title" Text="Sort by Title" runat="server" CssClass="btn btn-md-2 btn-default" />
@@ -15,7 +15,7 @@
             <asp:HyperLink NavigateUrl="?orderBy=Category.Name" Text="Sort by Category" runat="server" CssClass="btn btn-md-2 btn-default" />
             <asp:HyperLink NavigateUrl="?orderBy=Likes.Count()" Text="Sort by Likes" runat="server" CssClass="btn btn-md-2 btn-default" />
             <div runat="server" id="itemPlaceholder"></div>
-            <asp:Button Text="Insert new article" runat="server" OnClick="Unnamed_Click" CssClass="btn btn-info pull-right" />
+            <asp:Button Text="Insert new post" runat="server" OnClick="Unnamed_Click" CssClass="btn btn-info pull-right" />
             <br />
             <br />
             <asp:DataPager runat="server" PageSize="5">

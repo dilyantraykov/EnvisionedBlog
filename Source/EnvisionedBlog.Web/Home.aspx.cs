@@ -10,7 +10,7 @@
     public partial class Home : System.Web.UI.Page
     {
         [Inject]
-        public IArticlesServices ArticlesServices { get; set; }
+        public IPostsServices PostsServices { get; set; }
 
         [Inject]
         public ICategoriesServices CategoriesServices { get; set; }
@@ -20,9 +20,9 @@
 
         }
 
-        public IEnumerable<Article> repeaterArticle_GetData1()
+        public IEnumerable<Post> repeaterPost_GetData1()
         {
-            return this.ArticlesServices.GetTop(3);
+            return this.PostsServices.GetTop(3);
         }
 
         // The return type can be changed to IEnumerable, however to support

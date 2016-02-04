@@ -4,9 +4,9 @@
 
     public interface ILikesServices
     {
-        Like GetByAuthorIdAndArticledId(string userId, int articleId);
+        Like GetByAuthorIdAndPostdId(string userId, int postId);
 
-        void ChangeLike(string userId, int articleId);
+        void ChangeLike(string userId, int postId);
 
         void CreateLike(Like like);
     }

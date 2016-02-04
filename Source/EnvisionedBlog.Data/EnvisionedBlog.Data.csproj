@@ -58,9 +58,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IEnvisionedBlogDbContext.cs" />
-    <Compile Include="Migrations\201602032015517_Initial.cs" />
-    <Compile Include="Migrations\201602032015517_Initial.Designer.cs">
-      <DependentUpon>201602032015517_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201602042157111_CommentsAdded.cs" />
+    <Compile Include="Migrations\201602042157111_CommentsAdded.Designer.cs">
+      <DependentUpon>201602042157111_CommentsAdded.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Migrations\SeedData.cs" />
@@ -80,8 +80,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201602032015517_Initial.resx">
-      <DependentUpon>201602032015517_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201602042157111_CommentsAdded.resx">
+      <DependentUpon>201602042157111_CommentsAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

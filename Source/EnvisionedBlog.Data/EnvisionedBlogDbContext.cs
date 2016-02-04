@@ -12,11 +12,13 @@
         {
         }
 
-        public IDbSet<Article> Articles { get; set; }
+        public IDbSet<Post> Posts { get; set; }
 
         public IDbSet<Category> Categories { get; set; }
 
         public IDbSet<Like> Likes { get; set; }
+
+        public IDbSet<Comment> Comments { get; set; }
 
         public static EnvisionedBlogDbContext Create()
         {
@@ -26,9 +28,9 @@
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder
-                .Entity<Article>()
+                .Entity<Post>()
                 .HasRequired(p => p.Category)
-                .WithMany(x => x.Articles)
+                .WithMany(x => x.Posts)
                 .WillCascadeOnDelete(true);
 
             base.OnModelCreating(modelBuilder);

@@ -44,9 +44,9 @@
                 </header>
                 <nav class="nav-header">
                     <ul>
-                        <li><a href="Home.aspx">Home</a></li>
-                        <li><a href="Categories.aspx">Categories</a></li>
-                        <li><a href="LatestPosts.aspx">Latest Posts</a></li>
+                        <li><a href="/Home.aspx">Home</a></li>
+                        <li><a href="/Categories.aspx">Categories</a></li>
+                        <li><a href="/LatestPosts.aspx">Latest Posts</a></li>
                     </ul>
                 </nav>
             </div>

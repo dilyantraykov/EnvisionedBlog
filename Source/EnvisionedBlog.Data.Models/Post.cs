@@ -5,13 +5,15 @@
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    public class Article
+    public class Post
     {
         private ICollection<Like> likes;
+        private ICollection<Comment> comments;
 
-        public Article()
+        public Post()
         {
             this.likes = new HashSet<Like>();
+            this.comments = new HashSet<Comment>();
         }
 
         public int Id { get; set; }
@@ -24,16 +26,16 @@
 
         [Required]
         public string AuthorId { get; set; }
-
-        [ForeignKey("AuthorId")]
+        
         public virtual User Author { get; set; }
 
         [Required]
         public int CategoryId { get; set; }
-
-        [ForeignKey("CategoryId")]
+        
         public virtual Category Category { get; set; }
 
         public virtual ICollection<Like> Likes { get { return this.likes; } set { this.likes = value; } }
+
+        public virtual ICollection<Comment> Comments { get { return this.comments; } set { this.comments = value; } }
     }
 }

@@ -10,7 +10,7 @@
 namespace EnvisionedBlog.Web {
     
     
-    public partial class ViewArticle {
+    public partial class ViewPost {
         
         /// <summary>
         /// fvDetails control.

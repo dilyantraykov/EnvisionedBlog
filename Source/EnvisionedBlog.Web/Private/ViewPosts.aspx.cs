@@ -10,10 +10,10 @@
     using System.Web.ModelBinding;
     using System.Web.UI.WebControls;
 
-    public partial class ViewArticles : System.Web.UI.Page
+    public partial class ViewPosts : System.Web.UI.Page
     {
         [Inject]
-        public IArticlesServices ArticlesServices { get; set; }
+        public IPostsServices PostsServices { get; set; }
 
         [Inject]
         public ICategoriesServices CategoriesServices { get; set; }
@@ -23,9 +23,9 @@
 
         }
 
-        public IQueryable<Article> lvArticles_GetData([QueryString]string orderBy)
+        public IQueryable<Post> lvPosts_GetData([QueryString]string orderBy)
         {
-            var result = this.ArticlesServices.GetAll();
+            var result = this.PostsServices.GetAll();
 
             // TODO: validate orderBy or create dictionary
 
@@ -40,41 +40,41 @@
         }
 
         // The id parameter name should match the DataKeyNames value set on the control
-        public void lvArticles_UpdateItem(int id)
+        public void lvPosts_UpdateItem(int id)
         {
-            var article = new Article();
+            var post = new Post();
 
-            TryUpdateModel(article);
+            TryUpdateModel(post);
 
-            this.ArticlesServices.UpdateById(id, article);
+            this.PostsServices.UpdateById(id, post);
         }
 
-        public void lvArticles_DeleteItem(int id)
+        public void lvPosts_DeleteItem(int id)
         {
-            this.ArticlesServices.DeleteById(id);
+            this.PostsServices.DeleteById(id);
 
             this.Response.Redirect(this.Request.RawUrl);
         }
 
-        public void lvArticles_InsertItem()
+        public void lvPosts_InsertItem()
         {
-            var articleToInsert = new Article();
-            TryUpdateModel(articleToInsert);
+            var postToInsert = new Post();
+            TryUpdateModel(postToInsert);
 
-            articleToInsert.AuthorId = Page.User.Identity.GetUserId();
-            articleToInsert.DateCreated = DateTime.UtcNow;
+            postToInsert.AuthorId = Page.User.Identity.GetUserId();
+            postToInsert.DateCreated = DateTime.UtcNow;
 
-            this.ArticlesServices.Create(articleToInsert);
+            this.PostsServices.Create(postToInsert);
         }
 
         protected void Unnamed_Click(object sender, EventArgs e)
         {
-            this.lvArticles.InsertItemPosition = System.Web.UI.WebControls.InsertItemPosition.LastItem;
+            this.lvPosts.InsertItemPosition = System.Web.UI.WebControls.InsertItemPosition.LastItem;
         }
 
         protected void Unnamed_Click1(object sender, EventArgs e)
         {
-            this.lvArticles.InsertItemPosition = System.Web.UI.WebControls.InsertItemPosition.None;
+            this.lvPosts.InsertItemPosition = System.Web.UI.WebControls.InsertItemPosition.None;
         }
 
         protected void Unnamed_ServerValidate(object source, ServerValidateEventArgs args)

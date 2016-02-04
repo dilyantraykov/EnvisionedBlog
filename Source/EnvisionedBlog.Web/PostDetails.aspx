@@ -1,7 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ViewArticle.aspx.cs" Inherits="EnvisionedBlog.Web.ViewArticle" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="PostDetails.aspx.cs" Inherits="EnvisionedBlog.Web.ViewPost" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <asp:FormView runat="server" ID="fvDetails"
-        ItemType="EnvisionedBlog.Data.Models.Article"
+        ItemType="EnvisionedBlog.Data.Models.Post"
         SelectMethod="fvDetails_GetItem">
         <HeaderTemplate>
             <newsSystem:LikeHateCtrl ID="likeHate" runat="server" Visible="<%# HttpContext.Current.User.Identity.IsAuthenticated %>" />
