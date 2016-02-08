@@ -16,6 +16,15 @@ a {
     text-decoration: none;
 }
 
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
 /* Set widths on the form inputs since otherwise they're 100% wide */
 input[type="text"],
 input[type="password"],
@@ -103,10 +112,73 @@ nav {
     }
 }
 
+#breadcrumbs {
+    font-size: 1.2rem;
+    color: #7e7d7d;
+    margin-bottom: 40px;
+    margin-top: -43px;
+    text-shadow: 1px 1px 1px #ffffff;
+
+    a {
+        color: #a3a3a3;
+    }
+}
+
+#category-name {
+    margin-bottom: -40px;
+}
+
+.category-title {
+    font-family: Colaborate;
+    font-size: 30px;
+    color: #ffffff;
+    padding-top: 63px;
+    padding-bottom: 0;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.6);
+}
+
 .main-content {
     background-image: url("images/pattern.jpg");
     padding-top: 70px;
     padding-bottom: 37px;
+
+    h2.title {
+        font-size: 3rem;
+        font-family: "colaborate";
+        padding-bottom: 11px;
+        text-shadow: 1px 1px 1px #fff;
+    }
+
+    .post {
+        padding: 0px 60px 40px 0px;
+
+        p {
+            font-family: "droidsans";
+        }
+
+        p.meta-info {
+            background: url(images/title-bg.png) no-repeat;
+            padding: 15px 0 17px;
+            font-size: 1.8rem;
+            color: #505050;
+            text-shadow: 1px 1px 1px #fff;
+        }
+
+        .post-thumbnail {
+            display: block;
+            float: left;
+            position: relative;
+            margin-right: 30px;
+            height: 225px;
+            width: 225px;
+        }
+
+        a.read-more span {
+            display: block;
+            height: 29px;
+            padding-left: 12px;
+        }
+    }
 }
 
 .pre-footer {

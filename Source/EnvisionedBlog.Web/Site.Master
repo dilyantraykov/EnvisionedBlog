@@ -49,6 +49,9 @@
                         <li><a href="/LatestPosts.aspx">Latest Posts</a></li>
                     </ul>
                 </nav>
+
+                <asp:ContentPlaceHolder ID="TitlePlaceholder" runat="server">
+                </asp:ContentPlaceHolder>
             </div>
         </div>
         <div class="main-content">

@@ -13,13 +13,13 @@ namespace EnvisionedBlog.Web {
     public partial class Categories {
         
         /// <summary>
-        /// SiteMapPathBreadcrump control.
+        /// breadcrumbs control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SiteMapPath SiteMapPathBreadcrump;
+        protected global::System.Web.UI.WebControls.SiteMapPath breadcrumbs;
         
         /// <summary>
         /// lvCategories control.

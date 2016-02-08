@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Categories" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Categories.aspx.cs" Inherits="EnvisionedBlog.Web.Categories" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <asp:SiteMapPath ID="SiteMapPathBreadcrump" runat="server" PathSeparator="»"/>
+    <asp:SiteMapPath ID="breadcrumbs" runat="server" PathSeparator="»"/>
     <asp:ListView runat="server" ID="lvCategories"
         ItemType="EnvisionedBlog.Data.Models.Category"
         SelectMethod="lvCategories_GetData">

@@ -14,6 +14,7 @@
         {
             this.likes = new HashSet<Like>();
             this.comments = new HashSet<Comment>();
+            this.ImageUrl = "http://cdn.elegantthemes.com/preview/Envisioned/wp-content/uploads/et_temp/7-245685_213x213.jpg";
         }
 
         public int Id { get; set; }
@@ -23,6 +24,8 @@
         public string Title { get; set; }
 
         public DateTime DateCreated { get; set; }
+
+        public string ImageUrl { get; set; }
 
         [Required]
         public string AuthorId { get; set; }
