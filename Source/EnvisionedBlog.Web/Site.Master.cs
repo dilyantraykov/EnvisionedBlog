@@ -7,6 +7,10 @@ using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
+using EnvisionedBlog.Data.Models;
+using System.Linq;
+using Ninject;
+using EnvisionedBlog.Data.Services.Contracts;
 
 namespace EnvisionedBlog.Web
 {
@@ -15,6 +19,8 @@ namespace EnvisionedBlog.Web
         private const string AntiXsrfTokenKey = "__AntiXsrfToken";
         private const string AntiXsrfUserNameKey = "__AntiXsrfUserName";
         private string _antiXsrfTokenValue;
+        [Inject]
+        public IPostsServices PostsServices { get; set; }
 
         protected void Page_Init(object sender, EventArgs e)
         {
@@ -75,6 +81,13 @@ namespace EnvisionedBlog.Web
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
         {
             Context.GetOwinContext().Authentication.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+        }
+        
+        public IQueryable<Post> lastPosts_GetData()
+        {
+            return this.PostsServices.GetAll()
+                                    .OrderByDescending(p => p.DateCreated)
+                                    .Take(10);
         }
     }
 

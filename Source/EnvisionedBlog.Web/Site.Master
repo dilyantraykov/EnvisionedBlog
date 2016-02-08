@@ -37,10 +37,10 @@
             </Scripts>
         </asp:ScriptManager>
 
-        <div class="section hero">
+        <div id="top">
             <div class="container">
                 <header>
-                    <h1>envisioned</h1>
+                    <h1>Envisioned Blog</h1>
                 </header>
                 <nav class="nav-header">
                     <ul>
@@ -61,17 +61,22 @@
             <div class="container">
                 <div class="row">
                     <div class="one-third column value">
-                        <h5 class="pre-footer-heading">What We Offer</h5>
-                        <p>Rhoncus quis, varius sed velit. Mauris quis nunc eu nunc molestie egestas et sit amet odio. Morbi lacinia velit in nibh sodales sed pharetra sem feugiat. Vivamus ut cursus augue. Integer sit amet arcu lorem, at egestas tellus. Phasellus tellus orci, congue at tristique at, mattis ut arcu. Donec dictum</p>
-                        <a href="#" class="btn">Read More</a>
+                        <h4 class="pre-footer-heading">About Us</h4>
+                        <p>Maecenas ac nunc purus, et aliquam urna. Curabitur quis tellus vitae dolor tristique egestas. Fusce metus sem, accumsan vel auctor non, laoreet eget nulla. Donec lacinia elit ac nulla hendrerit at tincidunt justo facilisis. Praesent vel risus ut urna vestibulum fermentum. Pellentesque sollicitudin cursus blandit. In hac habitasse platea dictumst. Maecenas sed nulla sed lacus elementum dapibus. Praesent hendrerit semper tempor.</p>
                     </div>
                     <div class="one-third column value">
-                        <h5 class="pre-footer-heading">Who We Are</h5>
-                        <p>Rhoncus quis, varius sed velit. Mauris quis nunc eu nunc molestie egestas et sit amet odio. Morbi lacinia velit in nibh sodales sed pharetra sem feugiat. Vivamus ut cursus augue. Integer sit amet arcu lorem, at egestas tellus. Phasellus tellus orci, congue at tristique at, mattis ut arcu. Donec dictum</p>
-                    </div>
-                    <div class="one-third column value">
-                        <h5 class="pre-footer-heading">Our Mission</h5>
-                        <p>Rhoncus quis, varius sed velit. Mauris quis nunc eu nunc molestie egestas et sit amet odio. Morbi lacinia velit in nibh sodales sed pharetra sem feugiat. Vivamus ut cursus augue. Integer sit amet arcu lorem, at egestas tellus. Phasellus tellus orci, congue at tristique at, mattis ut arcu. Donec dictum</p>
+                        <h4 class="pre-footer-heading">Recent Posts</h4>
+                        <asp:ListView ID="lastPosts" runat="server" DataKeyNames="Id"
+                            ItemType="EnvisionedBlog.Data.Models.Post" SelectMethod="lastPosts_GetData">
+                            <LayoutTemplate>
+                                <ul>
+                                    <li id="itemPlaceholder" runat="server"></li>
+                                </ul>
+                            </LayoutTemplate>
+                            <ItemTemplate>
+                                <li><a href="/ViewPost.aspx?id=<%#: Item.Id %>"><%#: Item.Title %></a> by <a href="/ViewAuthor.aspx?id=<%#: Item.AuthorId %>"><%#: Item.Author.UserName %></a></li>
+                            </ItemTemplate>
+                        </asp:ListView>
                     </div>
                 </div>
             </div>
