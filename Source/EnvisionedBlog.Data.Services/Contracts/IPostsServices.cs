@@ -7,6 +7,8 @@
     {
         IQueryable<Post> GetTop(int count);
 
+        IQueryable<Post> GetLatest(int count);
+
         IQueryable<Post> GetAll();
 
         Post GetById(int id);

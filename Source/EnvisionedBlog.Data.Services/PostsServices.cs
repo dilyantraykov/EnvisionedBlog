@@ -24,6 +24,11 @@
             return this.posts.All().OrderByDescending(x => x.Likes.Count()).Take(count);
         }
 
+        public IQueryable<Post> GetLatest(int count)
+        {
+            return this.posts.All().OrderByDescending(x => x.DateCreated).Take(count);
+        }
+
         public Post GetById(int id)
         {
             return this.posts.GetById(id);
