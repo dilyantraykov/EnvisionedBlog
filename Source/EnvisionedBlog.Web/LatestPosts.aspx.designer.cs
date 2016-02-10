@@ -13,13 +13,13 @@ namespace EnvisionedBlog.Web {
     public partial class LatestPosts {
         
         /// <summary>
-        /// breadcrumbs control.
+        /// BreadCrumbsServer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SiteMapPath breadcrumbs;
+        protected global::System.Web.UI.WebControls.SiteMapPath BreadCrumbsServer;
         
         /// <summary>
         /// repeaterPost control.

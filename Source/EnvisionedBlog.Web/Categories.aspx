@@ -19,7 +19,7 @@
                     </LayoutTemplate>
                     <ItemTemplate>
                         <li>
-                            <a href="ViewPost.aspx?id=<%# Item.Id %>"><strong><%#: Item.Title %></strong> <i>by <%#: Item.Author.UserName %></i></a>
+                            <a href="PostDetails.aspx?id=<%# Item.Id %>"><strong><%#: Item.Title %></strong> <i>by <%#: Item.Author.UserName %></i></a>
                         </li>
                     </ItemTemplate>
                     <EmptyDataTemplate>
