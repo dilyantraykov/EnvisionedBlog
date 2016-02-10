@@ -191,7 +191,6 @@
       <DependentUpon>Site.css</DependentUpon>
     </Content>
     <Content Include="Content\skeleton.css" />
-    <Content Include="Controls\LikeHateControl.ascx" />
     <Content Include="fonts\BlackJack\blackjar-demo.html" />
     <Content Include="fonts\BlackJack\blackjar-webfont.svg" />
     <Content Include="fonts\Colaborate\ColabThi-demo.html" />
@@ -299,13 +298,6 @@
     </Compile>
     <Compile Include="Categories.aspx.designer.cs">
       <DependentUpon>Categories.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\LikeHateControl.ascx.cs">
-      <DependentUpon>LikeHateControl.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Controls\LikeHateControl.ascx.designer.cs">
-      <DependentUpon>LikeHateControl.ascx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

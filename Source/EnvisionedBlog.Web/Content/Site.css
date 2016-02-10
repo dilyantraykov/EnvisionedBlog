@@ -65,6 +65,34 @@ h1 {
   font-size: 3.6rem;
   text-shadow: 0px 0px 5px black;
 }
+h2,
+h3,
+h4,
+h5,
+h6,
+.service h3.title,
+#quote-inner p,
+a.additional-info,
+h4.widgettitle,
+h1.category-title,
+h2.title,
+h3#comments,
+.entry h1,
+.entry h2,
+.entry h3,
+.entry h4,
+.entry h5,
+.entry h6,
+h3#reply-title span,
+.post p.meta-info,
+#sidebar h4.widgettitle,
+#featured .description h2,
+.comment-meta,
+.wp-pagenavi span,
+.wp-pagenavi a,
+.wp-pagenavi span.current {
+  font-family: "colaborate";
+}
 #top {
   padding-top: 65px;
   padding-bottom: 60px;
@@ -132,11 +160,16 @@ nav ul li a:hover {
   font-family: "droidsans";
 }
 .main-content .post p.meta-info {
+  font-family: "colaborate";
   background: url(images/title-bg.png) no-repeat;
   padding: 15px 0 17px;
   font-size: 1.8rem;
   color: #505050;
   text-shadow: 1px 1px 1px #fff;
+}
+.main-content .post p.meta-info a {
+  color: #090909;
+  text-decoration: none;
 }
 .main-content .post .post-thumbnail {
   display: block;
@@ -150,6 +183,52 @@ nav ul li a:hover {
   display: block;
   height: 29px;
   padding-left: 12px;
+}
+.main-content #comment-wrap {
+  padding-right: 60px;
+}
+.main-content #comment-wrap .comment-wrap {
+  padding: 18px 18px 8px 29px;
+}
+.main-content #comment-wrap .comment-wrap .comment-meta {
+  color: #1f262d;
+  font-size: 2.4rem;
+  margin-bottom: 12px;
+  text-shadow: 1px 1px 1px #fff;
+}
+.main-content #comment-wrap h3#comments,
+.main-content #comment-wrap h3#reply-title span {
+  font-size: 30px;
+  color: #1f262d;
+  background: url(images/title-bg.png) no-repeat bottom left;
+  padding-bottom: 33px;
+  margin-bottom: 5px;
+  display: block;
+  text-shadow: 1px 1px 1px #fff;
+}
+.main-content #comment-wrap .comment-body {
+  position: relative;
+  padding-left: 82px;
+  margin-bottom: 30px;
+}
+.main-content #comment-wrap .comment-container {
+  background-color: white;
+  border-radius: 5px;
+  padding: 0 2px 0 1px;
+}
+.main-content #comment-wrap .avatar-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.main-content #comment-wrap .avatar-container .avatar-box,
+.main-content #comment-wrap .avatar-container .avatar-overlay {
+  width: 68px;
+  height: 68px;
+}
+.main-content #comment-wrap .avatar-container .avatar-box .avatar-box img,
+.main-content #comment-wrap .avatar-container .avatar-overlay .avatar-box img {
+  margin: 6px 0 0 6px;
 }
 .pre-footer {
   background-image: url("images/bg.jpg");
