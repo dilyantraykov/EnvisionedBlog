@@ -11,18 +11,22 @@
         [Inject]
         public IPostsServices PostsServices { get; set; }
 
-        protected void Page_Load(object sender, EventArgs e)
+        protected void Page_Render(object sender, EventArgs e)
         {
-
         }
-
-        // The id parameter should match the DataKeyNames value set on the control
-        // or be decorated with a value provider attribute, e.g. [QueryString]int id
+        
         public Post fvDetails_GetItem([QueryString]string id)
         {
-            // TODO: validate id
+            int projectId;
+            if (!int.TryParse(this.Request.QueryString["id"], out projectId))
+            {
+                this.Response.Redirect("/");
+            }
 
-            return this.PostsServices.GetById(int.Parse(id));
+            var post = this.PostsServices.GetById(projectId);
+            this.Title = post.Title;
+            this.PostTitle.Text = post.Title;
+            return post;
         }
     }
 }
