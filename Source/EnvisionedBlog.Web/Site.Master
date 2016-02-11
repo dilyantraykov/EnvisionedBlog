@@ -37,30 +37,36 @@
             </Scripts>
         </asp:ScriptManager>
 
-        <div id="top">
-            <div class="container">
-                <header>
-                    <h1>Envisioned Blog</h1>
-                </header>
-                <nav class="nav-header">
-                    <ul>
-                        <li><a href="/Home.aspx">Home</a></li>
-                        <li><a href="/Categories.aspx">Categories</a></li>
-                        <li><a href="/LatestPosts.aspx">Latest Posts</a></li>
-                    </ul>
-                </nav>
-                <div id="category-name">
-                    <h1 class="category-title">
-                        <asp:ContentPlaceHolder ID="TitlePlaceholder" runat="server">
-                        </asp:ContentPlaceHolder>
-                    </h1>
+        <div id="top-shadow">
+            <div id="top">
+                <div class="container">
+                    <header>
+                        <h1>Envisioned Blog</h1>
+                    </header>
+                    <nav class="nav-header">
+                        <ul>
+                            <li><a href="/Home.aspx">Home</a></li>
+                            <li><a href="/Categories.aspx">Categories</a></li>
+                            <li><a href="/LatestPosts.aspx">Latest Posts</a></li>
+                            <li class="u-pull-right"><a href="/Account/Login.aspx">Login</a></li>
+                            <li class="u-pull-right"><a href="/Account/Register.aspx">Register</a></li>
+                        </ul>
+                    </nav>
+                    <div id="category-name">
+                        <h1 class="category-title">
+                            <asp:ContentPlaceHolder ID="TitlePlaceholder" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </h1>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="main-content">
-            <div class="container">
-                <asp:ContentPlaceHolder ID="MainContent" runat="server">
-                </asp:ContentPlaceHolder>
+            <div class="content-shadow">
+                <div class="container">
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
             </div>
         </div>
         <div class="section pre-footer">
@@ -80,9 +86,13 @@
                                 </ul>
                             </LayoutTemplate>
                             <ItemTemplate>
-                                <li><a href="/ViewPost.aspx?id=<%#: Item.Id %>"><%#: Item.Title %></a> by <a href="/ViewAuthor.aspx?id=<%#: Item.AuthorId %>"><%#: Item.Author.UserName %></a></li>
+                                <li><a href="/PostDetails.aspx?id=<%#: Item.Id %>"><%#: Item.Title %></a> by <a href="/ViewAuthor.aspx?id=<%#: Item.AuthorId %>"><%#: Item.Author.UserName %></a></li>
                             </ItemTemplate>
                         </asp:ListView>
+                    </div>
+                    <div class="one-third column value">
+                        <h4 class="pre-footer-heading">Custom Text Widget</h4>
+                        <p>Nam commodo dignissim felis vitae ullamcorper. Sed volutpat velit id purus bibendum placerat. Sed porta, nulla ac interdum ullamcorper, mi orci porta eros, nec commodo ligula dolor et arcu. Quisque ullamcorper enim vel tellus rhoncus et fermentum diam congue. Phasellus eu turpis lorem, id gravida nunc. In bibendum nulla vel quam pretium a fringilla erat ornare.</p>
                     </div>
                 </div>
             </div>
@@ -94,6 +104,8 @@
                         <li><a href="Home.aspx">Home</a></li>
                         <li><a href="Categories.aspx">Categories</a></li>
                         <li><a href="LatestPosts.aspx">Latest Posts</a></li>
+                        <li class="u-pull-right"><a href="/Account/Login.aspx">Login</a></li>
+                        <li class="u-pull-right"><a href="/Account/Register.aspx">Register</a></li>
                     </ul>
                 </nav>
             </div>
