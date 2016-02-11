@@ -13,13 +13,22 @@ namespace EnvisionedBlog.Web {
     public partial class Categories {
         
         /// <summary>
-        /// breadcrumbs control.
+        /// PostTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SiteMapPath breadcrumbs;
+        protected global::System.Web.UI.WebControls.Label PostTitle;
+        
+        /// <summary>
+        /// BreadCrumbsServer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SiteMapPath BreadCrumbsServer;
         
         /// <summary>
         /// lvCategories control.
@@ -29,5 +38,14 @@ namespace EnvisionedBlog.Web {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ListView lvCategories;
+        
+        /// <summary>
+        /// sidebar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::EnvisionedBlog.Web.Sidebar sidebar;
     }
 }
