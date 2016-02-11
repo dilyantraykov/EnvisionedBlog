@@ -6,7 +6,7 @@
     using System;
     using System.Web.ModelBinding;
 
-    public partial class ViewPost : System.Web.UI.Page
+    public partial class PostDetails : System.Web.UI.Page
     {
         [Inject]
         public IPostsServices PostsServices { get; set; }
