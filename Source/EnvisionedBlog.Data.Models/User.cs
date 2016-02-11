@@ -13,6 +13,7 @@
         public User()
         {
             this.comments = new HashSet<Comment>();
+            this.Avatar = "https://telerikacademy.com/Content/Images/apple-touch-icon.png";
         }
 
         public string FirstName { get; set; }

@@ -8,6 +8,11 @@ namespace EnvisionedBlog.Data.Models
 {
     public class Comment
     {
+        public Comment()
+        {
+            this.PublishDate = DateTime.Now;
+        }
+
         public int Id { get; set; }
 
         public string Message { get; set; }
