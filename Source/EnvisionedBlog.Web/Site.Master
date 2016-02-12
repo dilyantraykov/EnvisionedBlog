@@ -124,5 +124,6 @@
             </div>
         </footer>
     </form>
+    <asp:ContentPlaceHolder ID="SriptsPlaceholder" runat="server" />
 </body>
 </html>

@@ -19,5 +19,12 @@
         {
             return this.PostsServices.GetTop(3);
         }
+
+        public IQueryable<Post> lastPosts_GetData2()
+        {
+            return this.PostsServices.GetAll()
+                                    .OrderByDescending(p => p.Likes.Count)
+                                    .Take(10);
+        }
     }
 }

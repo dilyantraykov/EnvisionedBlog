@@ -29,4 +29,40 @@
             </div>
         </div>
     </div>
+    <div class="container">
+        <asp:ListView runat="server" ID="lvPost"
+            ItemType="EnvisionedBlog.Data.Models.Post"
+            SelectMethod="lastPosts_GetData2"
+            GroupItemCount="5">
+            <GroupTemplate>
+                <div class="row">
+                    <div id="itemPlaceholder" runat="server"></div>
+                </div>
+            </GroupTemplate>
+            <LayoutTemplate>
+                <div id="groupPlaceholder" runat="server"></div>
+            </LayoutTemplate>
+            <ItemTemplate>
+                <a href="<%# Item.ImageUrl %>" rel="posts" class="post-image">
+                    <img src="<%# Item.ImageUrl %>" />
+                </a>
+            </ItemTemplate>
+        </asp:ListView>
+    </div>
+</asp:Content>
+
+<asp:Content ContentPlaceHolderID="SriptsPlaceholder" runat="server">
+    <script src="/Content/fancybox/jquery.fancybox.js"></script>
+    <script src="/Content/fancybox/jquery.fancybox.pack.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("a.post-image").fancybox({
+                'transitionIn': 'elastic',
+                'transitionOut': 'elastic',
+                'speedIn': 600,
+                'speedOut': 200,
+                'overlayShow': false
+            });
+        });
+    </script>
 </asp:Content>
