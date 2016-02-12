@@ -52,8 +52,8 @@
                             <li class="u-pull-right"><a href="/Account/Register.aspx">Register</a></li>
                         </ul>
                     </nav>
-                    <div id="category-name">
-                        <h1 class="category-title">
+                    <div id="title-placeholder">
+                        <h1 class="title-text">
                             <asp:ContentPlaceHolder ID="TitlePlaceholder" runat="server">
                             </asp:ContentPlaceHolder>
                         </h1>
@@ -61,12 +61,10 @@
                 </div>
             </div>
         </div>
-        <div class="main-content">
+        <div id="main-content">
             <div class="content-shadow">
-                <div class="container">
                     <asp:ContentPlaceHolder ID="MainContent" runat="server">
                     </asp:ContentPlaceHolder>
-                </div>
             </div>
         </div>
         <div class="section pre-footer">

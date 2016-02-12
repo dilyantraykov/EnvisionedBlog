@@ -7,36 +7,38 @@
 </asp:Content>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <div id="breadcrumbs">
-        <asp:SiteMapPath ID="BreadCrumbsServer" runat="server" PathSeparator=" » " />
+    <div class="container">
+        <div id="breadcrumbs">
+            <asp:SiteMapPath ID="BreadCrumbsServer" runat="server" PathSeparator=" » " />
+        </div>
+        <div id="left-area">
+            <asp:ListView runat="server" ID="lvCategories"
+                ItemType="EnvisionedBlog.Data.Models.Category"
+                SelectMethod="lvCategories_GetData">
+                <LayoutTemplate>
+                    <div runat="server" id="itemPlaceholder"></div>
+                </LayoutTemplate>
+                <ItemTemplate>
+                    <div class="col-md-6">
+                        <h3><%#: Item.Name %></h3>
+                        <asp:ListView runat="server" ItemType="EnvisionedBlog.Data.Models.Post" DataSource="<%# Item.Posts.OrderByDescending(x => x.DateCreated).Take(3) %>">
+                            <LayoutTemplate>
+                                <ul runat="server" id="itemPlaceholder">
+                                </ul>
+                            </LayoutTemplate>
+                            <ItemTemplate>
+                                <li>
+                                    <a href="PostDetails.aspx?id=<%# Item.Id %>"><strong><%#: Item.Title %></strong> <i>by <%#: Item.Author.UserName %></i></a>
+                                </li>
+                            </ItemTemplate>
+                            <EmptyDataTemplate>
+                                No posts.
+                            </EmptyDataTemplate>
+                        </asp:ListView>
+                    </div>
+                </ItemTemplate>
+            </asp:ListView>
+        </div>
+        <my:Sidebar runat="server" ID="sidebar"></my:Sidebar>
     </div>
-    <div id="left-area">
-        <asp:ListView runat="server" ID="lvCategories"
-            ItemType="EnvisionedBlog.Data.Models.Category"
-            SelectMethod="lvCategories_GetData">
-            <LayoutTemplate>
-                <div runat="server" id="itemPlaceholder"></div>
-            </LayoutTemplate>
-            <ItemTemplate>
-                <div class="col-md-6">
-                    <h3><%#: Item.Name %></h3>
-                    <asp:ListView runat="server" ItemType="EnvisionedBlog.Data.Models.Post" DataSource="<%# Item.Posts.OrderByDescending(x => x.DateCreated).Take(3) %>">
-                        <LayoutTemplate>
-                            <ul runat="server" id="itemPlaceholder">
-                            </ul>
-                        </LayoutTemplate>
-                        <ItemTemplate>
-                            <li>
-                                <a href="PostDetails.aspx?id=<%# Item.Id %>"><strong><%#: Item.Title %></strong> <i>by <%#: Item.Author.UserName %></i></a>
-                            </li>
-                        </ItemTemplate>
-                        <EmptyDataTemplate>
-                            No posts.
-                        </EmptyDataTemplate>
-                    </asp:ListView>
-                </div>
-            </ItemTemplate>
-        </asp:ListView>
-    </div>
-    <my:sidebar runat="server" id="sidebar"></my:sidebar>
 </asp:Content>
