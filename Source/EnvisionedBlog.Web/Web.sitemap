@@ -3,6 +3,6 @@
   <siteMapNode url="~/Home" title="Home"  description="Home page">
     <siteMapNode url="~/PostDetails" title="Post Details"  description="" />
     <siteMapNode url="~/Categories" title="Categories"  description="" />
-    <siteMapNode url="~/LatestPosts" title="Recent Posts"  description="" />
+    <siteMapNode url="~/LatestPosts" title="Latest Posts"  description="" />
   </siteMapNode>
 </siteMap>

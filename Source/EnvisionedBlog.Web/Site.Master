@@ -13,7 +13,7 @@
     </asp:PlaceHolder>
     <link href="fonts/fonts.css" rel="stylesheet" type="text/css">
     <webopt:BundleReference runat="server" Path="~/Content/css" />
-    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="~/favicon.png" rel="shortcut icon" type="image/png" />
 </head>
 <body>
     <form runat="server">
@@ -45,11 +45,26 @@
                     </header>
                     <nav class="nav-header">
                         <ul>
-                            <li><a href="/Home.aspx">Home</a></li>
-                            <li><a href="/Categories.aspx">Categories</a></li>
-                            <li><a href="/LatestPosts.aspx">Latest Posts</a></li>
-                            <li class="u-pull-right"><a href="/Account/Login.aspx">Login</a></li>
-                            <li class="u-pull-right"><a href="/Account/Register.aspx">Register</a></li>
+                            <asp:LoginView runat="server" ViewStateMode="Disabled">
+                                <AnonymousTemplate>
+                                    <li><a href="/Home.aspx">Home</a></li>
+                                    <li><a href="/Categories.aspx">Categories</a></li>
+                                    <li><a href="/LatestPosts.aspx">Latest Posts</a></li>
+                                    <li class="u-pull-right"><a href="/Account/Login.aspx">Login</a></li>
+                                    <li class="u-pull-right"><a href="/Account/Register.aspx">Register</a></li>
+                                </AnonymousTemplate>
+                            </asp:LoginView>
+                            <asp:LoginView runat="server" ViewStateMode="Disabled">
+                                <LoggedInTemplate>
+                                    <li><a href="/Home.aspx">Home</a></li>
+                                    <li><a href="/Categories.aspx">Categories</a></li>
+                                    <li><a href="/LatestPosts.aspx">Latest Posts</a></li>
+                                    <li class="u-pull-right">
+                                        <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Logout" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
+                                    </li>
+                                    <li class="u-pull-right"><a href="/Account/Manage.aspx">Hello, <%= HttpContext.Current.User.Identity.Name %></a></li>
+                                </LoggedInTemplate>
+                            </asp:LoginView>
                         </ul>
                     </nav>
                     <div id="title-placeholder">
@@ -63,8 +78,8 @@
         </div>
         <div id="main-content">
             <div class="content-shadow">
-                    <asp:ContentPlaceHolder ID="MainContent" runat="server">
-                    </asp:ContentPlaceHolder>
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
             </div>
         </div>
         <div class="section pre-footer">
@@ -102,8 +117,6 @@
                         <li><a href="Home.aspx">Home</a></li>
                         <li><a href="Categories.aspx">Categories</a></li>
                         <li><a href="LatestPosts.aspx">Latest Posts</a></li>
-                        <li class="u-pull-right"><a href="/Account/Login.aspx">Login</a></li>
-                        <li class="u-pull-right"><a href="/Account/Register.aspx">Register</a></li>
                     </ul>
                 </nav>
             </div>
