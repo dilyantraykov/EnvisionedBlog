@@ -84,6 +84,7 @@ tbody {
 body {
   background-color: black;
   background-image: url("images/bg.jpg");
+  background-position: top center;
   background-repeat: no-repeat;
   background-size: cover;
   font-size: 1.2rem;
@@ -370,7 +371,12 @@ select:focus {
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
   border: 1px outset black;
-  background-color: #262626;
+  background-color: #2f2f2f;
+  background: -webkit-gradient(linear, left top, left bottom, from(#2f2f2f), to(#1e1e1e));
+  background: -webkit-linear-gradient(top, #2f2f2f, #1e1e1e);
+  background: -moz-linear-gradient(top, #2f2f2f, #1e1e1e);
+  background: -ms-linear-gradient(top, #2f2f2f, #1e1e1e);
+  background: -o-linear-gradient(top, #2f2f2f, #1e1e1e);
   padding: 1.2rem;
   height: 3.8rem;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
@@ -382,6 +388,9 @@ select:focus {
   width: 28px;
   height: 28px;
   margin: -4.5rem auto 4.5rem;
+}
+#main-content .category-row {
+  margin-bottom: 2rem;
 }
 #main-content .post {
   padding: 0 6rem 4rem 0;
@@ -419,7 +428,12 @@ select:focus {
   margin-top: 2rem;
   color: white;
   float: right;
-  background-color: #343434;
+  background-color: #2f2f2f;
+  background: -webkit-gradient(linear, left top, left bottom, from(#2f2f2f), to(#1e1e1e));
+  background: -webkit-linear-gradient(top, #2f2f2f, #1e1e1e);
+  background: -moz-linear-gradient(top, #2f2f2f, #1e1e1e);
+  background: -ms-linear-gradient(top, #2f2f2f, #1e1e1e);
+  background: -o-linear-gradient(top, #2f2f2f, #1e1e1e);
   border-radius: 5px;
   display: inline-block;
   padding: 0.5rem 1rem;
@@ -499,7 +513,6 @@ select:focus {
 .pre-footer {
   background-image: url("images/bg.jpg");
   background-position: top center;
-  padding-top: 5.5rem;
   padding-bottom: 5rem;
   line-height: 2.1rem;
   color: #8b949d;

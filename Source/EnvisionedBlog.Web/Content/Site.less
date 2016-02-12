@@ -113,6 +113,7 @@ table, th, td, tr, thead, tbody {
 body {
     background-color: black;
     background-image: url("images/bg.jpg");
+    background-position: top center;
     background-repeat: no-repeat;
     background-size: cover;
     font-size: 1.2rem;
@@ -385,7 +386,7 @@ input[type=text]:focus, input[type=password]:focus, input.text:focus, input.titl
                 span {
                     .border-radius(0.5rem);
                     border: 1px outset black;
-                    background-color: #262626;
+                    .gradient(#2f2f2f, #1e1e1e);
                     padding: 1.2rem;
                     height: 3.8rem;
                     .text-shadow(1px 1px 1px rgba(0,0,0,0.4));
@@ -401,6 +402,10 @@ input[type=text]:focus, input[type=password]:focus, input.text:focus, input.titl
             height: 28px;
             margin: -4.5rem auto 4.5rem;
         }
+    }
+
+    .category-row {
+        margin-bottom: 2rem;
     }
 
     .post {
@@ -442,7 +447,7 @@ input[type=text]:focus, input[type=password]:focus, input.text:focus, input.titl
             margin-top: 2rem;
             color: white;
             float: right;
-            background-color: @dark-gray;
+            .gradient(#2f2f2f, #1e1e1e);
             border-radius: 5px;
             display: inline-block;
             padding: 0.5rem 1rem;
@@ -528,7 +533,6 @@ input[type=text]:focus, input[type=password]:focus, input.text:focus, input.titl
 .pre-footer {
     background-image: url("images/bg.jpg");
     background-position: top center;
-    padding-top: 5.5rem;
     padding-bottom: 5rem;
     line-height: 2.1rem;
     color: #8b949d;
