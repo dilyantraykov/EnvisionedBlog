@@ -14,13 +14,20 @@
         <div id="left-area">
             <asp:ListView runat="server" ID="lvCategories"
                 ItemType="EnvisionedBlog.Data.Models.Category"
-                SelectMethod="lvCategories_GetData">
+                SelectMethod="lvCategories_GetData"
+                GroupItemCount="3">
                 <LayoutTemplate>
-                    <div runat="server" id="itemPlaceholder"></div>
+                    <div runat="server" id="groupPlaceholder">
+                    </div>
                 </LayoutTemplate>
+                <GroupTemplate>
+                    <div class="row category-row">
+                        <div runat="server" id="itemPlaceholder"></div>
+                    </div>
+                </GroupTemplate>
                 <ItemTemplate>
-                    <div class="col-md-6">
-                        <h3><%#: Item.Name %></h3>
+                    <div class="one-third column">
+                        <h4 class="title"><%#: Item.Name %></h4>
                         <asp:ListView runat="server" ItemType="EnvisionedBlog.Data.Models.Post" DataSource="<%# Item.Posts.OrderByDescending(x => x.DateCreated).Take(3) %>">
                             <LayoutTemplate>
                                 <ul runat="server" id="itemPlaceholder">

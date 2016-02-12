@@ -15,7 +15,7 @@
             <ItemTemplate>
                 <div class="post entry u-cf">
                     <h2 class="title"><a href="PostDetails.aspx?id=<%# Item.Id %>"><%# Item.Title %></a></h2>
-                    <p class="meta-info">Posted by <a href="/ViewAuthor.aspx?id=<%# Item.Author.Id %>" title="Posts by <%# Item.Author.UserName %>" rel="author"><%# Item.Author.UserName %></a> on <%# Item.DateCreated %> in <a href="#" rel="category tag"><%# Item.Category.Name %></a></p>
+                    <p class="meta-info">Posted by <a href="/ViewAuthor.aspx?id=<%# Item.Author.Id %>" title="Posts by <%# Item.Author.UserName %>" rel="author"><%# Item.Author.UserName %></a> on <%# Item.DateCreated %> in <a href="#" rel="category tag"><%# Item.Category.Name %></a> | <%# Item.Comments.Count %> Comments</p>
 
                     <div class="post-thumbnail">
                         <a href="#">
