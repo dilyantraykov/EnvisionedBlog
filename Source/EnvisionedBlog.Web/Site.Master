@@ -44,7 +44,7 @@
                         <h1>Envisioned Blog</h1>
                     </header>
                     <nav class="nav-header">
-                        <ul>
+                        <ul id="main-nav">
                             <asp:LoginView runat="server" ViewStateMode="Disabled">
                                 <AnonymousTemplate>
                                     <li><a href="/Home.aspx">Home</a></li>
@@ -62,10 +62,17 @@
                                     <li class="u-pull-right">
                                         <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Logout" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
                                     </li>
-                                    <li class="u-pull-right"><a href="/Account/Manage.aspx">Hello, <%= HttpContext.Current.User.Identity.Name %></a></li>
+                                    <li class="u-pull-right"><a href="#">Hello, <%= HttpContext.Current.User.Identity.Name %></a></li>
                                 </LoggedInTemplate>
                             </asp:LoginView>
                         </ul>
+                        <div id="collapsed-menu">
+                            <div class="dropdown">
+                                <a href="#" class="dropbtn">Dropdown</a>
+                                <div class="dropdown-content">
+                                </div>
+                            </div>
+                        </div>
                     </nav>
                     <div id="title-placeholder">
                         <h1 class="title-text">
@@ -125,5 +132,14 @@
         </footer>
     </form>
     <asp:ContentPlaceHolder ID="SriptsPlaceholder" runat="server" />
+    <script>
+        $(document).ready(function () {
+            var $collapsedMenuContent = $("#collapsed-menu").find(".dropdown-content");
+            var $links = $("#main-nav").find("a");
+            $links.each(function () {
+                $(this).clone().appendTo($collapsedMenuContent);
+            });
+        });
+    </script>
 </body>
 </html>

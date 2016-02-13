@@ -138,6 +138,67 @@ h2, h3, h4, h5, h6, .service h3.title, #quote-inner p, a.additional-info, h4.wid
 #top {
     padding-top: 6.5rem;
     padding-bottom: 6rem;
+    /* Navigation Menus */
+    nav {
+        position: relative;
+        background-color: @dark-gray;
+        .border-radius(1rem);
+        border: 1px outset #777777;
+        padding: 1.5rem 2.5rem;
+
+        a {
+            color: white;
+            text-shadow: none;
+
+            &:hover {
+                color: #929292;
+                font-family: Georgia;
+                font-style: italic;
+            }
+        }
+
+        #main-nav {
+            li {
+                display: inline-block;
+                font-size: 1.2rem;
+                margin: 0px;
+                padding: 0px;
+                padding-right: 2rem;
+                .text-shadow(1px 0px 0px #11161c);
+            }
+        }
+
+        #collapsed-menu {
+            display: none;
+
+            .dropdown {
+                display: inline-block;
+            }
+
+            .dropdown-content {
+                width: 100%;
+                margin-left: -2.5rem;
+                .border-radius(0.5rem);
+                display: none;
+                position: absolute;
+                padding-top: 1.6rem;
+                background-color: @dark-gray;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 9999;
+            }
+
+            .dropdown-content a {
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+        }
+    }
 }
 
 header {
@@ -156,39 +217,6 @@ header {
 
 #bottom-light {
     background: url(images/bottom-light-bg.png) no-repeat bottom center;
-}
-
-/* Navigation Menus */
-nav {
-    &.nav-header {
-        ul {
-            background-color: @dark-gray;
-            .border-radius(1rem);
-            border: 1px outset #777777;
-            padding: 1.5rem 2.5rem;
-        }
-    }
-
-    ul {
-        li {
-            display: inline-block;
-            font-size: 1.2rem;
-            margin: 0px;
-            padding: 0px;
-            padding-right: 2rem;
-            .text-shadow(1px 0px 0px #11161c);
-
-            a {
-                color: white;
-
-                &:hover {
-                    color: #929292;
-                    font-family: Georgia;
-                    font-style: italic;
-                }
-            }
-        }
-    }
 }
 
 /* Footer and sidebar widgets */
@@ -583,6 +611,27 @@ footer {
 
     nav {
         padding-top: 2.5rem;
+
+        ul {
+            li {
+                display: inline-block;
+                font-size: 1.2rem;
+                margin: 0px;
+                padding: 0px;
+                padding-right: 2rem;
+                .text-shadow(1px 0px 0px #11161c);
+
+                a {
+                    color: white;
+
+                    &:hover {
+                        color: #929292;
+                        font-family: Georgia;
+                        font-style: italic;
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -629,6 +678,16 @@ footer {
 
     .pre-footer-heading {
         margin-top: 2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #main-nav {
+        display: none;
+    }
+
+    #collapsed-menu {
+        display: block !important;
     }
 }
 
