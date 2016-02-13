@@ -68,7 +68,7 @@
                         </ul>
                         <div id="collapsed-menu">
                             <div class="dropdown">
-                                <a href="#" class="dropbtn">Dropdown</a>
+                                <a href="#" class="dropbtn">Menu</a>
                                 <div class="dropdown-content">
                                 </div>
                             </div>
