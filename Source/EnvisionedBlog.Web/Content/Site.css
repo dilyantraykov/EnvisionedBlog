@@ -458,7 +458,6 @@ select:focus {
 }
 #main-content #comment-wrap .comment-wrap {
   padding: 1.8rem;
-  width: 100%;
 }
 #main-content #comment-wrap .comment-wrap .comment-meta {
   color: #1f262d;
@@ -476,23 +475,34 @@ select:focus {
   display: block;
   text-shadow: 1px 1px 1px #fff;
 }
-#main-content #comment-wrap .commentlist {
-  width: 100%;
-}
 #main-content #comment-wrap .reply-container {
   font-size: 1.2rem;
   height: 29px;
   line-height: 2.8rem;
-  padding-right: 6rem;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
   display: block;
   float: right;
+}
+#main-content #comment-wrap .reply-container .comment-reply-link {
+  color: white;
+  padding: 0.5rem 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  border-radius: 1rem;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  background-color: #2f2f2f;
+  background: -webkit-gradient(linear, left top, left bottom, from(#2f2f2f), to(#1e1e1e));
+  background: -webkit-linear-gradient(top, #2f2f2f, #1e1e1e);
+  background: -moz-linear-gradient(top, #2f2f2f, #1e1e1e);
+  background: -ms-linear-gradient(top, #2f2f2f, #1e1e1e);
+  background: -o-linear-gradient(top, #2f2f2f, #1e1e1e);
 }
 #main-content #comment-wrap .comment-body {
   position: relative;
   padding-left: 8rem;
   margin-bottom: 3rem;
-  width: 100%;
 }
 #main-content #comment-wrap .comment-container {
   background-color: white;
@@ -514,9 +524,12 @@ select:focus {
   width: 68px;
   height: 68px;
 }
-#main-content #comment-wrap .avatar-container .avatar-box .avatar-box img,
-#main-content #comment-wrap .avatar-container .avatar-overlay .avatar-box img {
-  margin: 6px 0 0 6px;
+#main-content #comment-wrap .avatar-container .avatar-box img,
+#main-content #comment-wrap .avatar-container .avatar-overlay img {
+  border: 5px solid white;
+  -webkit-box-shadow: 0 0 3px gray;
+  -moz-box-shadow: 0 0 3px gray;
+  box-shadow: 0 0 3px gray;
 }
 .content-shadow {
   background: url(images/content-shadow-bg.png) repeat-x top left;
@@ -590,8 +603,8 @@ footer nav {
     display: none;
   }
   #left-area {
-    width: 100%;
-    float: none;
+    width: 100% !important;
+    float: none !important;
   }
   .pre-footer-heading {
     margin-top: 2rem;

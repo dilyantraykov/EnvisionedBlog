@@ -474,7 +474,6 @@ input[type=text]:focus, input[type=password]:focus, input.text:focus, input.titl
 
         .comment-wrap {
             padding: 1.8rem;
-            width: 100%;
 
             .comment-meta {
                 color: #1f262d;
@@ -494,25 +493,26 @@ input[type=text]:focus, input[type=password]:focus, input.text:focus, input.titl
             .text-shadow(1px 1px 1px #fff);
         }
 
-        .commentlist {
-            width: 100%;
-        }
-
         .reply-container {
             font-size: 1.2rem;
             height: 29px;
             line-height: 2.8rem;
-            padding-right: 6rem;
             .text-shadow(1px 1px 1px rgba(0, 0, 0, 0.5));
             display: block;
             float: right;
+
+            .comment-reply-link {
+                color: white;
+                padding: 0.5rem 1rem;
+                .border-radius(1rem);
+                .gradient(#2f2f2f, #1e1e1e);
+            }
         }
 
         .comment-body {
             position: relative;
             padding-left: 8rem;
             margin-bottom: 3rem;
-            width: 100%;
         }
 
         .comment-container {
@@ -530,8 +530,9 @@ input[type=text]:focus, input[type=password]:focus, input.text:focus, input.titl
                 width: 68px;
                 height: 68px;
 
-                .avatar-box img {
-                    margin: 6px 0 0 6px;
+                img {
+                    border: 5px solid white;
+                    .box-shadow(0 0 3px gray);
                 }
             }
         }
@@ -622,8 +623,8 @@ footer {
     }
 
     #left-area {
-        width: 100%;
-        float: none;
+        width: 100% !important;
+        float: none !important;
     }
 
     .pre-footer-heading {

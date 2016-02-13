@@ -33,10 +33,10 @@
 
                     <div id="comment-wrap">
                         <h3 id="comments"><%# Item.Comments.Count %> Comments</h3>
-                        <ol class="commentlist u-cf">
+                        <ol class="commentlist">
                             <asp:Repeater ItemType="EnvisionedBlog.Data.Models.Comment" DataSource="<%# Item.Comments %>" runat="server">
                                 <ItemTemplate>
-                                    <li class="comment even thread-even depth-1">
+                                    <li class="comment">
                                         <div class="comment-body u-cf">
                                             <div class="avatar-container">
                                                 <div class="avatar-box">
